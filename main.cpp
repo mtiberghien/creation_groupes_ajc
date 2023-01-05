@@ -99,7 +99,7 @@ void genere_all_groupe_apsides()
     int choixDebutants[] = {0, 1};
 
     // Création du fichier en écriture
-    ofstream file("Groupes_Apsides.csv");
+    ofstream file("Groupes_Apsides_All.csv");
      // On fait NB_APSIDES nombre de tirages (ça pourrait être un autre nombre mais ça colle pour les votes)
     for (int i=0;i<NB_APSIDES*NB_APSIDES*NB_APSIDES;i++)
     {
@@ -159,7 +159,7 @@ void genere_all_groupe_thales()
     int choixDebutants[] = {0, 1, 2, 3, 4};
 
     // Création du fichier en écriture
-    ofstream file("Groupes_Thales.csv");
+    ofstream file("Groupes_Thales_All.csv");
      // On fait NB_APSIDES nombre de tirages (ça pourrait être un autre nombre mais ça colle pour les votes)
     for (int i=0;i<NB_THALES*NB_THALES*NB_THALES;i++)
     {
@@ -188,8 +188,10 @@ int main(int argc, char *argv[])
     srand(2023);
 
     //Génération aléatoire des groupes pour Apsides
+    genere_random_groupe_apsides();
     genere_all_groupe_apsides();
 
     //Génération aléatoire des groupes pour Thales
+    genere_random_groupe_thales();
     genere_all_groupe_thales();
 }
